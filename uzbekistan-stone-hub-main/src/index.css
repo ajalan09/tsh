@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap");
+
+/* The Stone Hub - Premium Granite Design System */
+
+@layer base {
+  :root {
+    --background: 40 20% 97%;
+    --foreground: 220 15% 15%;
+
+    --card: 40 15% 95%;
+    --card-foreground: 220 15% 15%;
+
+    --popover: 40 20% 97%;
+    --popover-foreground: 220 15% 15%;
+
+    --primary: 220 12% 22%;
+    --primary-foreground: 40 20% 97%;
+
+    --secondary: 220 30% 92%;
+    --secondary-foreground: 220 15% 15%;
+
+    --muted: 220 20% 90%;
+    --muted-foreground: 220 10% 45%;
+
+    /* 🔵 BLUE ACCENT */
+    --accent: 220 85% 55%;
+    --accent-foreground: 40 20% 97%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 20% 97%;
+
+    --border: 220 20% 85%;
+    --input: 220 20% 85%;
+    --ring: 220 85% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --stone-dark: 220 12% 18%;
+    --stone-medium: 220 8% 35%;
+    --stone-light: 220 15% 75%;
+
+    /* 🔵 BLUE (formerly gold) */
+    --gold: 220 85% 55%;
+    --gold-light: 220 85% 65%;
+
+    --cream: 40 30% 96%;
+    --cream-dark: 40 20% 90%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(220 12% 18% / 0.7) 0%,
+      hsl(220 12% 18% / 0.4) 100%
+    );
+
+    --gradient-card: linear-gradient(
+      135deg,
+      hsl(40 20% 97%) 0%,
+      hsl(220 20% 92%) 100%
+    );
+
+    /* 🔵 BLUE GRADIENT */
+    --gradient-gold: linear-gradient(
+      135deg,
+      hsl(220 85% 55%) 0%,
+      hsl(220 85% 65%) 100%
+    );
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(220 12% 18% / 0.1);
+    --shadow-medium: 0 8px 30px -8px hsl(220 12% 18% / 0.15);
+
+    /* 🔵 BLUE SHADOW */
+    --shadow-gold: 0 4px 20px -4px hsl(220 85% 55% / 0.3);
+
+    /* Typography */
+    --font-display: "Playfair Display", serif;
+    --font-body: "DM Sans", sans-serif;
+
+    --sidebar-background: 40 20% 97%;
+    --sidebar-foreground: 220 15% 15%;
+    --sidebar-primary: 220 85% 55%;
+    --sidebar-primary-foreground: 40 20% 97%;
+    --sidebar-accent: 220 30% 92%;
+    --sidebar-accent-foreground: 220 15% 15%;
+    --sidebar-border: 220 20% 85%;
+    --sidebar-ring: 220 85% 55%;
+  }
+
+  /* 🌙 DARK MODE */
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 12% 14%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 40 20% 95%;
+    --primary-foreground: 220 12% 14%;
+
+    --secondary: 220 10% 20%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 220 10% 25%;
+    --muted-foreground: 40 15% 65%;
+
+    /* 🔵 BLUE ACCENT */
+    --accent: 220 85% 60%;
+    --accent-foreground: 220 15% 10%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 40 20% 95%;
+
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 220 85% 60%;
+
+    --sidebar-background: 220 15% 10%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 220 85% 60%;
+    --sidebar-primary-foreground: 220 15% 10%;
+    --sidebar-accent: 220 10% 20%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 220 10% 20%;
+    --sidebar-ring: 220 85% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  /* 🔵 BLUE TEXT GRADIENT */
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  /* 🔵 BLUE SHADOW */
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
